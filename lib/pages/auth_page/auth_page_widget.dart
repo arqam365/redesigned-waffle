@@ -132,12 +132,16 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Manrope',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                     letterSpacing: 0.0,
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Manrope',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -195,12 +199,16 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Manrope',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                     letterSpacing: 0.0,
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Manrope',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -255,23 +263,6 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                             minLines: 1,
                             validator: _model.passwordTextControllerValidator
                                 .asValidator(context),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                'Forgot Password?',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Manrope',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ],
                           ),
                           FFButtonWidget(
                             onPressed: () async {
