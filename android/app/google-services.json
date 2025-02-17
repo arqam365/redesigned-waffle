@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "2102724573",
+    "project_id": "begoniaorchid-bd8a4",
+    "storage_bucket": "begoniaorchid-bd8a4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2102724573:android:32c259746e0be62a285834",
+        "android_client_info": {
+          "package_name": "com.nextlevelprogrammers.chemistrypoint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2102724573-8mnfmcudttorrvhe1ri0asdjj0m9kb7s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nextlevelprogrammers.chemistrypoint",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "2102724573-si3i8lroocc5m85pk0b6p00oa03rcnft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMf7wWB1KsPu8ZaOmi9jF12X3kyPJpGcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2102724573-si3i8lroocc5m85pk0b6p00oa03rcnft.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "2102724573-gt7pq1pae2qob29g1b5thia9b2kuijsl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nextlevelprogrammers.chemistrypoint"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2102724573:android:f6d4b13cfe256306285834",
+        "android_client_info": {
+          "package_name": "com.nextlevelprogrammers.elearn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2102724573-922bntu9kcplp3ejuggiu4c3hvv9idlh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nextlevelprogrammers.elearn",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "2102724573-os4sls4vl7m13djjsmmou4tq3u7sj6u0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nextlevelprogrammers.elearn",
+            "certificate_hash": "252e6c9001b3a4e34ac4c02b5cb42e4e840de522"
+          }
+        },
+        {
+          "client_id": "2102724573-si3i8lroocc5m85pk0b6p00oa03rcnft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMf7wWB1KsPu8ZaOmi9jF12X3kyPJpGcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2102724573-si3i8lroocc5m85pk0b6p00oa03rcnft.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "2102724573-gt7pq1pae2qob29g1b5thia9b2kuijsl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nextlevelprogrammers.chemistrypoint"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

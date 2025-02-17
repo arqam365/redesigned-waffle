@@ -75,23 +75,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? MainPageWidget() : AuthPageWidget(),
+          appStateNotifier.loggedIn ? PapersPageWidget() : AuthPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? MainPageWidget() : AuthPageWidget(),
-        ),
-        FFRoute(
-          name: 'MainPage',
-          path: '/mainPage',
-          builder: (context, params) => MainPageWidget(),
+              appStateNotifier.loggedIn ? PapersPageWidget() : AuthPageWidget(),
         ),
         FFRoute(
           name: 'AuthPage',
           path: '/authPage',
           builder: (context, params) => AuthPageWidget(),
+        ),
+        FFRoute(
+          name: 'PapersPage',
+          path: '/papersPage',
+          builder: (context, params) => PapersPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>2102724573-gt7pq1pae2qob29g1b5thia9b2kuijsl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.2102724573-gt7pq1pae2qob29g1b5thia9b2kuijsl</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>2102724573-8mnfmcudttorrvhe1ri0asdjj0m9kb7s.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDi7T-MkVL7Fh7FUey38B3TmlNnOj3D3RQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>2102724573</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.nextlevelprogrammers.chemistrypoint</string>
+	<key>PROJECT_ID</key>
+	<string>begoniaorchid-bd8a4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>begoniaorchid-bd8a4.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:2102724573:ios:e4ba78a13bdd959f285834</string>
+</dict>
+</plist>
