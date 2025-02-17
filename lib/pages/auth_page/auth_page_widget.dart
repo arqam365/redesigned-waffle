@@ -70,7 +70,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                       borderRadius: BorderRadius.circular(60.0),
                     ),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(60.0),
+                      borderRadius: BorderRadius.circular(20.0),
                       child: SvgPicture.asset(
                         'assets/images/ico.svg',
                         width: 120.0,

@@ -92,6 +92,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'PapersPage',
           path: '/papersPage',
           builder: (context, params) => PapersPageWidget(),
+        ),
+        FFRoute(
+          name: 'ISCPaper1',
+          path: '/iSCPaper1',
+          builder: (context, params) => ISCPaper1Widget(),
+        ),
+        FFRoute(
+          name: 'ISCPaper2',
+          path: '/iSCPaper2',
+          builder: (context, params) => ISCPaper2Widget(),
+        ),
+        FFRoute(
+          name: 'CBSEPaper1',
+          path: '/cBSEPaper1',
+          builder: (context, params) => CBSEPaper1Widget(),
+        ),
+        FFRoute(
+          name: 'CBSEPaper2',
+          path: '/cBSEPaper2',
+          builder: (context, params) => CBSEPaper2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
