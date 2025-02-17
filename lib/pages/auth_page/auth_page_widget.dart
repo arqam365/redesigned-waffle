@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -23,10 +24,10 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
     super.initState();
     _model = createModel(context, () => AuthPageModel());
 
-    _model.textController1 ??= TextEditingController();
+    _model.emailTextController ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
   }
 
@@ -121,7 +122,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           TextFormField(
-                            controller: _model.textController1,
+                            controller: _model.emailTextController,
                             focusNode: _model.textFieldFocusNode1,
                             autofocus: false,
                             obscureText: false,
@@ -180,11 +181,11 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                     ),
                             minLines: 1,
                             keyboardType: TextInputType.emailAddress,
-                            validator: _model.textController1Validator
+                            validator: _model.emailTextControllerValidator
                                 .asValidator(context),
                           ),
                           TextFormField(
-                            controller: _model.textController2,
+                            controller: _model.passwordTextController,
                             focusNode: _model.textFieldFocusNode2,
                             autofocus: false,
                             obscureText: !_model.passwordVisibility,
@@ -252,7 +253,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                             minLines: 1,
-                            validator: _model.textController2Validator
+                            validator: _model.passwordTextControllerValidator
                                 .asValidator(context),
                           ),
                           Row(
@@ -273,8 +274,20 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                             ],
                           ),
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              GoRouter.of(context).prepareAuthEvent();
+
+                              final user = await authManager.signInWithEmail(
+                                context,
+                                _model.emailTextController.text,
+                                _model.passwordTextController.text,
+                              );
+                              if (user == null) {
+                                return;
+                              }
+
+                              context.goNamedAuth(
+                                  'PapersPage', context.mounted);
                             },
                             text: 'Sign In',
                             options: FFButtonOptions(
