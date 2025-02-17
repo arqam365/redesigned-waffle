@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'main_page_widget.dart' show MainPageWidget;
+import 'auth_page_widget.dart' show AuthPageWidget;
 import 'package:flutter/material.dart';
 
-class MainPageModel extends FlutterFlowModel<MainPageWidget> {
+class AuthPageModel extends FlutterFlowModel<AuthPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.
@@ -12,10 +12,13 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
+  late bool passwordVisibility;
   String? Function(BuildContext, String?)? textController2Validator;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    passwordVisibility = false;
+  }
 
   @override
   void dispose() {

@@ -2,25 +2,26 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'main_page_model.dart';
-export 'main_page_model.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'auth_page_model.dart';
+export 'auth_page_model.dart';
 
-class MainPageWidget extends StatefulWidget {
-  const MainPageWidget({super.key});
+class AuthPageWidget extends StatefulWidget {
+  const AuthPageWidget({super.key});
 
   @override
-  State<MainPageWidget> createState() => _MainPageWidgetState();
+  State<AuthPageWidget> createState() => _AuthPageWidgetState();
 }
 
-class _MainPageWidgetState extends State<MainPageWidget> {
-  late MainPageModel _model;
+class _AuthPageWidgetState extends State<AuthPageWidget> {
+  late AuthPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MainPageModel());
+    _model = createModel(context, () => AuthPageModel());
 
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
@@ -46,59 +47,79 @@ class _MainPageWidgetState extends State<MainPageWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
-          automaticallyImplyLeading: false,
-          title: Text(
-            'Access Documents',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Outfit',
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
-                ),
-          ),
-          actions: [],
-          centerTitle: false,
-          elevation: 2.0,
-        ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
+            padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Material(
                   color: Colors.transparent,
+                  elevation: 3.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(60.0),
+                  ),
+                  child: Container(
+                    width: 120.0,
+                    height: 120.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      borderRadius: BorderRadius.circular(60.0),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(60.0),
+                      child: SvgPicture.asset(
+                        'assets/images/ico.svg',
+                        width: 120.0,
+                        height: 120.0,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Welcome Back!',
+                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                            fontFamily: 'Outfit',
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
+                    Text(
+                      'Sign in to continue',
+                      style: FlutterFlowTheme.of(context).bodyLarge.override(
+                            fontFamily: 'Manrope',
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ].divide(SizedBox(height: 12.0)),
+                ),
+                Material(
+                  color: Colors.transparent,
                   elevation: 2.0,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
+                    borderRadius: BorderRadius.circular(16.0),
                   ),
                   child: Container(
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      borderRadius: BorderRadius.circular(12.0),
+                      borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(
-                          20.0, 20.0, 20.0, 20.0),
+                          24.0, 24.0, 24.0, 24.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Text(
-                            'Enter your email to access PDF documents',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyLarge
-                                .override(
-                                  fontFamily: 'Manrope',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
                           TextFormField(
                             controller: _model.textController1,
                             focusNode: _model.textFieldFocusNode1,
@@ -166,7 +187,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                             controller: _model.textController2,
                             focusNode: _model.textFieldFocusNode2,
                             autofocus: false,
-                            obscureText: false,
+                            obscureText: !_model.passwordVisibility,
                             decoration: InputDecoration(
                               labelText: 'Password',
                               labelStyle: FlutterFlowTheme.of(context)
@@ -211,8 +232,18 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                               ),
                               filled: true,
                               fillColor: Colors.white,
-                              suffixIcon: Icon(
-                                Icons.password_sharp,
+                              suffixIcon: InkWell(
+                                onTap: () => safeSetState(
+                                  () => _model.passwordVisibility =
+                                      !_model.passwordVisibility,
+                                ),
+                                focusNode: FocusNode(skipTraversal: true),
+                                child: Icon(
+                                  _model.passwordVisibility
+                                      ? Icons.visibility_outlined
+                                      : Icons.visibility_off_outlined,
+                                  size: 22,
+                                ),
                               ),
                             ),
                             style:
@@ -221,44 +252,55 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                             minLines: 1,
-                            keyboardType: TextInputType.emailAddress,
                             validator: _model.textController2Validator
                                 .asValidator(context),
                           ),
-                        ].divide(SizedBox(height: 16.0)),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                'Forgot Password?',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Manrope',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ],
+                          ),
+                          FFButtonWidget(
+                            onPressed: () {
+                              print('Button pressed ...');
+                            },
+                            text: 'Sign In',
+                            options: FFButtonOptions(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 50.0,
+                              padding: EdgeInsets.all(8.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Manrope',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 3.0,
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                          ),
+                        ].divide(SizedBox(height: 20.0)),
                       ),
                     ),
                   ),
                 ),
-                FFButtonWidget(
-                  onPressed: () async {},
-                  text: 'Access PDFs',
-                  options: FFButtonOptions(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 50.0,
-                    padding: EdgeInsets.all(8.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Manrope',
-                          color: Colors.white,
-                          letterSpacing: 0.0,
-                        ),
-                    elevation: 3.0,
-                    borderRadius: BorderRadius.circular(25.0),
-                  ),
-                ),
-                Text(
-                  'We\'ll send you an email with access instructions',
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Manrope',
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        letterSpacing: 0.0,
-                      ),
-                ),
-              ].divide(SizedBox(height: 24.0)),
+              ].divide(SizedBox(height: 32.0)),
             ),
           ),
         ),
